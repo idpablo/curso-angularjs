@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listaTelefonica">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/style.css ">
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/js/script.js"></script>
+
+    <title>Document</title>
+</head>
+<body ng-controller="listaTelefonicaCtrl">
+    <div class="jumbotron">
+        <h3 ng-bind="app"></h3>
+        <table ng-show="contacts.length > 0" class="table table-striped">
+            <tr>
+                <tr class="title">
+                    <th>Selecionar</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Operadora</th>
+                </tr>
+                <tr ng-class="{select: contact.select}" ng-repeat="contact in contacts">
+                    <td><input type="checkbox" ng-model="contact.select"></td>
+                    <td>{{contact.nome}}</td>
+                    <td>{{contact.telefone}}</td>
+                    <td>{{contact.operadora.nome}}</td>
+                </tr>
+            </tr>
+        </table>
+        <hr/>
+            <input class="form-control" type="text" ng-model="contact.nome" placeholder="Nome...">
+            <input class="form-control" type="text" ng-model="contact.telefone" placeholder="Telefone...">
+            <select class="form-control" ng-model="contact.operadora" ng-options="operadora.nome group by operadora.categoira for operadora in operadoras">
+                <option value=""">Selecione uma operadora</option>
+            </select>
+            <div>
+                <div class="button-aling">
+                <button class="btn btn-primary" ng-click="addContact(contact)" ng-disabled="!contact.nome || !contact.telefone || !contact.operadora.nome" )">Adicionar contact</button>
+                <button class="btn btn-danger" ng-click="removeContact(contacts)" ng-show="isRemoveContact(contacts)">Delete</button>
+                </div>
+            </div>
+            
+            {{contact}}
+    </div>
+</body>
+</html>
