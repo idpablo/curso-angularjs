@@ -16,7 +16,7 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3 ng-bind="app"></h3>
-        <table ng-show="contacts.length > 0" class="table table-striped">
+        <table class="table table-striped">
             <tr>
                 <tr class="title">
                     <th>Selecionar</th>
@@ -40,12 +40,12 @@
             </select>
             <div>
                 <div class="button-aling">
-                <button class="btn btn-primary" ng-click="addContact(contact)" ng-disabled="!contact.nome || !contact.telefone || !contact.operadora.nome" )">Adicionar contact</button>
-                <button class="btn btn-danger" ng-click="removeContact(contacts)" ng-show="isRemoveContact(contacts)">Delete</button>
+                <button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.nome || !contact.telefone || !contact.operadora.nome" )">Adicionar Contact</button>
+                <button class="btn btn-danger btn-block" ng-click="removeContact(contacts)" ng-if="isRemoveContact" >Delete Contact</button>
                 </div>
             </div>
             
-            {{contact}}
+            {{contacts}}
     </div>
 </body>
 </html>
