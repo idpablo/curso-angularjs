@@ -41,12 +41,10 @@
             </select>
             <div>
                 <div class="button-aling">
-                <button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.nome || !contact.telefone || !contact.operadora.nome" )">Adicionar Contact</button>
-                <button class="btn btn-danger btn-block" ng-click="removeContact(contacts)" >Delete Contact</button>
+                <button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.nome || !contact.telefone" )">Adicionar Contact</button>
+                <button class="btn btn-danger btn-block" ng-click="removeContact(contacts)" ng-if="isRemoveContact(contacts)" >Delete Contact</button>
                 </div>
             </div>
-            
-            {{contacts}}
     </div>
 </body>
 </html>
