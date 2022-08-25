@@ -16,16 +16,16 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3 ng-bind="app"></h3>
-        <input  class="form-control" type="text" ng-model="searchFilter" placeholder="Buscar...">
+        <input  class="form-control inputStyle" type="text" ng-model="searchFilter" placeholder="Buscar...">
         <table class="table table-striped">
             <tr>
                 <tr class="title">
                     <th>Selecionar</th>
-                    <th>Nome</th>
-                    <th>Telefone</th>
+                    <th> <a href="" ng-click="orderPer('nome')">Nome</a></th>
+                    <th> <a href="" ng-click="orderPer('telefone')">Telefone</a></th>
                     <th>Operadora</th>
                 </tr>
-                <tr ng-class="{select: contact.select}" ng-repeat="contact in contacts | filter:'pablo'">
+                <tr ng-class="{select: contact.select}" ng-repeat="contact in contacts | filter:searchFilter | orderBy:orderFilter:directOrder">
                     <td><input type="checkbox" ng-model="contact.select"></td>
                     <td>{{contact.nome}}</td>
                     <td>{{contact.telefone}}</td>
@@ -36,7 +36,7 @@
         <hr/>
             <input class="form-control" type="text" ng-model="contact.nome" placeholder="Nome...">
             <input class="form-control" type="text" ng-model="contact.telefone" placeholder="Telefone...">
-            <select class="form-control" ng-model="contact.operadora" ng-options="operadora.nome group by operadora.categoira for operadora in operadoras">
+            <select class="form-control" ng-model="contact.operadora" ng-options="operadora.nome group by operadora.categoira for operadora in operadoras | orderBy:'nome'">
                 <option value=""">Selecione uma operadora</option>
             </select>
             <div>

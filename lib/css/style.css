@@ -2,7 +2,7 @@
 .jumbotron{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 30%;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -14,8 +14,13 @@
 .form-control{
     margin-bottom: 5px;
 }
-.btn{
-    width: 49%;
+.button-aling{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+input{
+    margin-top: 20px;
 }
 .select{
     background-color: rgb(127, 127, 127);
