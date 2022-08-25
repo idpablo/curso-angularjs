@@ -16,6 +16,7 @@
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3 ng-bind="app"></h3>
+        <input  class="form-control" type="text" ng-model="searchFilter" placeholder="Buscar...">
         <table class="table table-striped">
             <tr>
                 <tr class="title">
@@ -24,7 +25,7 @@
                     <th>Telefone</th>
                     <th>Operadora</th>
                 </tr>
-                <tr ng-class="{select: contact.select}" ng-repeat="contact in contacts">
+                <tr ng-class="{select: contact.select}" ng-repeat="contact in contacts | filter:'pablo'">
                     <td><input type="checkbox" ng-model="contact.select"></td>
                     <td>{{contact.nome}}</td>
                     <td>{{contact.telefone}}</td>
@@ -41,7 +42,7 @@
             <div>
                 <div class="button-aling">
                 <button class="btn btn-primary btn-block" ng-click="addContact(contact)" ng-disabled="!contact.nome || !contact.telefone || !contact.operadora.nome" )">Adicionar Contact</button>
-                <button class="btn btn-danger btn-block" ng-click="removeContact(contacts)" ng-if="isRemoveContact(contacts)" >Delete Contact</button>
+                <button class="btn btn-danger btn-block" ng-click="removeContact(contacts)" >Delete Contact</button>
                 </div>
             </div>
             
