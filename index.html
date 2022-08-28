@@ -18,7 +18,7 @@
             <h3 ng-bind="app"></h3>
         <div  class="actions">
             <input  class="form-control inputStyle" type="text" ng-model="searchFilter" placeholder="Buscar...">
-            <button id="callAddContact" class="btn btn-primary btn-block" ng-click="callAddContact()">Adicionar</button>
+            <button class="btn btn-primary" ng-click="checked" ng-init="checked=false">Adicionar</button>
             <button class="btn btn-danger btn-block" ng-click="removeContact(contacts)" ng-if="isRemoveContact(contacts)" >Delete Contact</button>
         </div>
         <table class="table table-striped">
@@ -40,7 +40,7 @@
             </tr>
         </table>
         <hr/>
-        <div class="input-camp" ng-if="callAddContact(campAdd)">
+        <div class="input-camp" ng-if="checked">
             <input class="form-control ipunt" type="text" ng-model="contact.nome" placeholder="Nome...">
             <input class="form-control ipunt" type="text" ng-model="contact.telefone" placeholder="Telefone...">
             <select class="form-control ipunt" ng-model="contact.operadora" ng-options="operadora.nome group by operadora.categoira for operadora in operadoras | orderBy:'nome'">
