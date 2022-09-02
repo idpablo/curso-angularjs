@@ -1,4 +1,5 @@
 
+
 .actions{
     text-align: justify;
     width: 100%;
@@ -7,15 +8,10 @@
     margin-bottom: 20px;
     margin-top: 10px;
 }
-.ng-binding{
-    width: 100%;
-}
 .jumbotron{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 35%;
+    width: 400px;
     margin-top: 40PX;
     margin-left: auto;
     margin-right: auto;
@@ -25,7 +21,8 @@
     border-radius: 3px;
 }
 .form-control{
-
+    display: flex;
+    align-items: baseline;
 }
 .btn{
     margin-right: 5PX;
@@ -42,5 +39,4 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
 }
